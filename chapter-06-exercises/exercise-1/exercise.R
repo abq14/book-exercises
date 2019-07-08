@@ -1,18 +1,18 @@
 # Exercise 1: calling built-in functions
 
 # Create a variable `my_name` that contains your name
-
+my_name <- "Abigail" 
 
 # Create a variable `name_length` that holds how many letters (including spaces)
 # are in your name (use the `nchar()` function)
-
+name_length <- nchar(my_name)
 
 # Print the number of letters in your name
-
+print(name_length)
 
 # Create a variable `now_doing` that is your name followed by "is programming!" 
 # (use the `paste()` function)
-
+now_doing <- paste(my_name, " is programming!", sep = "") 
 
 # Make the `now_doing` variable upper case
 
@@ -21,7 +21,8 @@
 
 # Pick two of your favorite numbers (between 1 and 100) and assign them to 
 # variables `fav_1` and `fav_2`
-
+fav_1 <- 14
+fav_2 <- 13
 
 # Divide each number by the square root of 201 and save the new value in the
 # original variable
