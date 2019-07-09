@@ -1,24 +1,25 @@
 # Exercise 7: using dplyr on external data
 
 # Load the `dplyr` library
-
+#install.packages("dplyr")
+library(dplyr)
 
 # Use the `read.csv()` function to read in the included data set. Remember to
 # save it as a variable.
-
+nba_data <- read.csv("data/nba_teams_2016.csv", stringsAsFactors = FALSE)
 
 # View the data frame you loaded, and get some basic information about the 
 # number of rows/columns. 
 # Note the "X" preceding some of the column titles as well as the "*" following
 # the names of teams that made it to the playoffs that year.
-
+View(nba_data)
 
 # Add a column that gives the turnovers to steals ratio (TOV / STL) for each team
-
+nba_data$tov_to_stl_ratio <- nba_data$TOV / nba_data$STL
 
 # Sort the teams from lowest turnover/steal ratio to highest
 # Which team has the lowest turnover/steal ratio?
-
+nba_ratio_sorted <- arrange(nba_data, tov_to_stl_ratio, Team)
 
 # Using the pipe operator, create a new column of assists per game (AST / G) 
 # AND sort the data.frame by this new column in descending order.

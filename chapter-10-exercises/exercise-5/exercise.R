@@ -26,13 +26,15 @@ most_popular_in_year(1994)
 # returns statistically how many babies out of 1 million born that year have 
 # that name. 
 # Hint: get the popularity percentage, and take that percentage out of 1 million.
-number_in_million <- 
+number_in_million <- function(name, year){
+  round(names[names$name == name & names$year == year, "prop"] * 1000000, 1)
+}
 
 # How many babies out of 1 million had the name 'Laura' in 1995?
-
+number_in_million("Laura", 1995)
 
 # How many babies out of 1 million had your name in the year you were born?
-
+number_in_million("Abigail", 2000)
 
 ## Consider: what does this tell you about how easy it is to identify you with 
 ## just your name and birth year?
